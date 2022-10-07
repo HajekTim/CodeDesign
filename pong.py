@@ -1,6 +1,3 @@
-# Pong game made using Python
-# By Karan.V
-
 import turtle
 
 # Erstellen des Fensters
@@ -41,8 +38,9 @@ ball.color("White")
 ball.penup()
 ball.goto(0, 0)
 # iniziale Bewegung
-ball.dx = 0.25
-ball.dy = -0.25
+ball_speed = 0.3
+ball.dx = ball_speed
+ball.dy = -ball_speed
 
 # Score 
 pen = turtle.Turtle()
@@ -122,9 +120,9 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0, 0)
         if ball.dx < 0:
-            ball.dx = 0.25
+            ball.dx = ball_speed
         else:
-            ball.dx = -0.25
+            ball.dx = -ball_speed
         print(ball.dx)
         score_a += 1
         pen.clear()
@@ -134,9 +132,9 @@ while True:
     if ball.xcor() < -390:
         ball.goto(0, 0)
         if ball.dx < 0:
-            ball.dx = 0.25
+            ball.dx = ball_speed
         else:
-            ball.dx = -0.25
+            ball.dx = -ball_speed
         print(ball.dx)
         score_b += 1
         pen.clear()
